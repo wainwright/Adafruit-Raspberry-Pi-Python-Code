@@ -40,6 +40,11 @@ class SevenSegment:
     # Set the appropriate digit
     self.disp.setBufferRow(charNumber, self.digits[value] | (dot << 7))
 
+  def clearDigit(self, charNumber):
+    if (charNumber > 7):
+      return;
+    self.disp.setBufferRow(charNumber, 0)
+
   def setColon(self, state=True):
     "Enables or disables the colon character"
     # Warning: This function assumes that the colon is character '2',
